@@ -1,1 +1,1 @@
-# TebogoSekwala-portfolio
+# Tebogo Sekwala-portfolio
