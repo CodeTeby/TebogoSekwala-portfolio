@@ -1,0 +1,72 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class GuessNumberGame extends JFrame {
+    private int secretNumber;
+    private int attempts;
+
+    private JLabel label;
+    private JTextField textField;
+
+    public GuessNumberGame() {
+        secretNumber = (int) (Math.random() * 100) + 1; //generates random number
+        attempts = 0;
+
+        setTitle("Guess the Number");
+        setSize(300, 150);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        label = new JLabel("Guess a number between 1 and 100:");
+        textField = new JTextField(10);
+        JButton button = new JButton("Submit");
+
+        button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                checkGuess(); //actionPerformed method of the actionListener is called
+            }
+        });
+
+        JPanel panel = new JPanel();//pane
+        panel.add(label);
+        panel.add(textField);
+        panel.add(button);
+
+        getContentPane().add(panel);//holds visible panel
+        setVisible(true);
+    }
+
+    private void checkGuess() {
+        attempts++;
+        int guess = Integer.parseInt(textField.getText());
+            System.out.println("Welcome to Guess the Number game!");
+            System.out.println("I'm thinking of a number between 1 and 100");
+            
+        if (guess == secretNumber) {
+            System.out.println(this, "Congratulations! You guessed the number in " + attempts + " attempts!");
+            dispose();//cleanup for the object
+        } else if (guess < secretNumber) {
+            System.out.println(this, "Wrong Guess. Try a higher number.");
+        } else {
+            System.out.println(this, "Wrong Guess. Try a lower number.");
+        }
+        if (i == K) {
+            System.out.println(
+                "You have exhausted"
+                + " K trials.");
+ 
+            System.out.println(
+                "The number was " + number);
+
+        textField.setText("");//clear the textfield
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new GuessNumberGame();
+            }
+        });
+    }
+}
