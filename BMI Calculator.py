@@ -31,13 +31,4 @@ def BMI():
 
 BMI()
 
-#prompt for name and age
-name = input('Enter your name: ')
-age = int(input('Enter your age: '))
-days = (current_day-birthday) #why this formula
-age = (years**365) + (months**31) +days
-print('You will turn 100 years old in: ' + age  )
-
-
-
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
